@@ -36,8 +36,8 @@ function CreateAnnouncement() {
   );
   const handleSelected = (teams) => {
     const newTeamList = [...data.teams, ...teams];
+    console.log('Selected', newTeamList);
     setData({ ...data, teams: newTeamList });
-    handleBlur({ currentTarget: { name: 'teams', value: newTeamList } });
     handleDisplaySearchGroups();
   };
 
@@ -71,7 +71,7 @@ function CreateAnnouncement() {
     } catch (err) {}
     setIsSubmitLoading(false);
   };
-
+  console.log(data);
   return (
     <>
       {displaySearchGroups && (
